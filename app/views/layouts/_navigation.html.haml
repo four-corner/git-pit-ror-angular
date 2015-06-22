@@ -1,0 +1,32 @@
+%nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse{"ng-controller" => "HeaderController", "bs-active-link" => ""}
+  .container
+    .navbar-header
+      %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation not needed
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "#/users", "ng-show" => "isAuthenticated()"} GitPit Project Manager
+      %a.navbar-brand{:href => "#/", "ng-hide" => "isAuthenticated()"} GitPit Project Manager
+    #navbar.navbar-collapse.collapse
+      %ul.nav.navbar-nav.my-nav-tabs{"ng-show" => "isAuthenticated()"}
+        %li
+          %a{:href => "#/users"} Users
+        %li
+          %a{:href => "#/roles"} Roles
+        %li
+          %a{:href => "#/projects"} Projects
+
+      %ul.nav.navbar-nav.navbar-right
+        %li{"ng-show" => "isAuthenticated()"}
+          %a{:href => "#/users/{{current_user().id}}"} Hi {{current_user().first_name}}.
+        %li{"ng-show" => "isAuthenticated()"}
+          %a{:href => "#/users/{{current_user().id}}/edit"} Edit profile
+        %li{"ng-controller" => "SessionLogoutCtr as sessionLO", "ng-show" => "isAuthenticated()"}
+          %a{:href => "", "ng-click" => "sessionLO.logout()"} Sign out
+        %li{"ng-hide" => "isAuthenticated()"}
+          %a{:href => "#/sign_in"} Sign in
+
+.container
+  .jumbotron{"ng-view" => "", "extra-scope" => ""}
+    = yield

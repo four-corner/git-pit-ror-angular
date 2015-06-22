@@ -1,0 +1,14 @@
+= form_for(@role) do |f|
+  - if @role.errors.any?
+    = ar_errors_custom_view(@role)
+
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name, :class => 'form-control'
+  .field
+    = f.label :description
+    %br/
+    = f.text_field :description, :class => 'form-control'
+  .actions
+    = f.submit "Create Role", :class => "btn btn-default"

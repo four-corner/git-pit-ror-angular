@@ -1,0 +1,23 @@
+%h2 Listing Users
+.table-responsive
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th First name
+        %th Last name
+        %th Role
+        %th Actions
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= user.first_name
+          %td= user.last_name
+          %td= user.role.name
+          %td
+            = link_to 'Show', user, :class => "btn btn-success btn-sm active", :role => "button"
+            = link_to 'Edit', edit_user_registration_url(current_user), :class => "btn btn-warning btn-sm active", :role => "button"
+            = link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm active", :role => "button"
+
+= link_to 'New User', create_new_user_path
+
+

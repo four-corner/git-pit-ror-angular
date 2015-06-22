@@ -1,0 +1,19 @@
+= form_for(@project) do |f|
+  - if @project.errors.any?
+    = ar_errors_custom_view(@project)
+  .field
+    = f.label :customer
+    %br/
+    = f.text_field :customer, :class => 'form-control'
+  .field
+    = f.label :product
+    %br/
+    = f.text_field :product, :class => 'form-control'
+  .field
+    = f.label :platform
+    %br/
+    = f.text_field :platform, :class => 'form-control'
+
+  = f.hidden_field :user_id, value: current_user.id
+  .actions
+    = f.submit "Create Project", :class => "btn btn-default"

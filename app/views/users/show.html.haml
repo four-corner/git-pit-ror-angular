@@ -1,0 +1,12 @@
+%p
+  %strong First name:
+  = @user.first_name
+%p
+  %strong Last name:
+  = @user.last_name
+%p
+  %strong Role:
+  = @user.role.name
+= link_to 'Edit', edit_user_registration_url(current_user)
+|
+= link_to 'Back', users_path

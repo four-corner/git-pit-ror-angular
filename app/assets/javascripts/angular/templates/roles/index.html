@@ -1,0 +1,31 @@
+<h2>Listing Roles</h2>
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-hide="roles.list.length">
+      <td>No roles found, Please create one.</td>
+    </tr>
+    <tr ng-repeat="role in roles.list" ng-show="roles.list.length">
+      <td>
+        {{ role.name }}
+      </td>
+      <td>
+        {{ role.description }}
+      </td>
+      <td>
+        <a class="btn btn-success btn-sm active" role="button" href="#/roles/{{ role.id }}">Show</a>
+        <a class="btn btn-warning btn-sm active" role="button" href="#/roles/{{ role.id }}/edit">Edit</a>
+        <a class="btn btn-danger btn-sm active" role="button" rel="nofollow" href="" ng-click="deleteRole(role.id)">Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<a href="#/create_new_role">New Role</a>

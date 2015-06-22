@@ -1,0 +1,39 @@
+<div class="form-group" ng-class="{'has-error' : submitted && userForm.first_name.$invalid}">
+  <label class="control-label" for="user_first_name">First name <span class="required">* </span> </label>
+
+  <input id="user_first_name" type="text" name="first_name" class="form-control" ng-model="user.first_name" required placeholder="first name" />
+  <p ng-show=" submitted && userForm.first_name.$invalid" class="help-block">First name is required.</p>
+</div>
+
+<div class="form-group" ng-class="{'has-error' : submitted && userForm.last_name.$invalid}">
+  <label class="control-label" for="user_last_name">Last name <span class="required">* </span> </label>
+
+  <input id="user_last_name" type="text" name="last_name" class="form-control" ng-model="user.last_name" required placeholder="last name"/>
+  <p ng-show=" submitted && userForm.last_name.$invalid" class="help-block">Last name is required.</p>
+</div>
+
+<div ng-show="is_admin" class="form-group" ng-class="{'has-error' : submitted && userForm.role_id.$invalid}">
+  <label class="control-label" for="user_role_id">Role <span class="required">* </span> </label>
+
+  <select class="form-control" name="role_id" id="user_role_id" ng-model="selectedOpt" required="required" ng-options="role as role.name for role in roles track by role.name">
+  </select>
+
+  <p ng-show=" submitted && userForm.role_id.$invalid" class="help-block">Role is required.</p>
+</div>
+
+<div class="form-group" ng-class="{'has-error' : submitted && userForm.email.$invalid}">
+  <label class="control-label" for="user_email">Email <span class="required">* </span> </label>
+
+  <input id="user_email" type="email" name="email" class="form-control" ng-model="user.email" required placeholder="test@example.com"/>
+
+  <p ng-show="submitted && userForm.email.$error.required" class="help-block">Email is required.</p>
+
+  <p ng-show="submitted && userForm.email.$error.email" class="help-block">Enter valid email</p>
+</div>
+
+<div class="form-group">
+  <div class="pull-left">
+    <button type="submit" class="btn btn-default" ng-click="submitted=true">Submit</button>
+  </div>
+</div>
+

@@ -1,0 +1,12 @@
+<div class="alert alert-error alert-block" ng-show="errors.length">
+  <button class="close" data-dismiss="alert" type="button">
+    x
+  </button>
+  <div class="alert alert-danger">
+    <ul ng-repeat="error in errors">
+      <li>
+        {{ error }}
+      </li>
+    </ul>
+  </div>
+</div>

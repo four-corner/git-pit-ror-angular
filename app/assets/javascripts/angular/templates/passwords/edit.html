@@ -1,0 +1,25 @@
+<div ng-controller="PasswordEditCtr as password">
+  <h2>Change your password?</h2>
+
+  <div ng-include src="'assets/angular/templates/partials/_errors.html'" include-replace></div>
+
+  <form ng-submit="password.setNew()" novalidate name="passwordForm" accept-charset="UTF-8" method="put">
+
+    <div class='form-group'>
+      <label for="user_password">New password</label>
+      <em>
+        (8 characters minimum)
+      </em>
+      <input autofocus="autofocus" autocomplete="off" class="form-control" type="password" value="" name="password" id="user_password" placeholder="Enter password" ng-model="password.credentials.password" />
+    </div>
+
+    <div class='form-group'>
+      <label for="user_password_confirmation">Confirm new password</label>
+      <input autocomplete="off" class="form-control" type="password" value="" name="password_confirmation" id="user_password_confirmation" placeholder="Enter confirm password" ng-model="password.credentials.password_confirmation" />
+    </div>
+
+    <input type="submit" name="commit" class="btn btn-default" value="Change my password" />
+
+  </form>
+</div>
+<a href="#/sign_in">Log in</a>

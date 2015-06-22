@@ -1,0 +1,23 @@
+%h2 Listing Projects
+.table-responsive
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th Customer
+        %th Product
+        %th Platform
+        %th Created By
+        %th Actions
+    %tbody
+      - @projects.each do |project|
+        %tr
+          %td= project.customer
+          %td= project.product
+          %td= project.platform
+          %td= project.user.full_name
+          %td
+            = link_to 'Show', project, :class => "btn btn-success btn-sm active", :role => "button"
+            = link_to 'Edit', edit_project_path(project), :class => "btn btn-warning btn-sm active", :role => "button"
+            = link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm active", :role => "button"
+
+= link_to 'New Project', new_project_path

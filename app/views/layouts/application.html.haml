@@ -1,0 +1,11 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %title GitPit Project Manager
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    = favicon_link_tag 'favicon.ico'
+    = csrf_meta_tags
+  %body{"ng-app" => "myapplication"}
+    = render partial: "layouts/navigation"

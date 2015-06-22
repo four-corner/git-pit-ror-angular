@@ -1,0 +1,8 @@
+asset 'angular'
+asset 'angular-route'
+asset 'angular-resource'
+asset 'angular-devise'
+asset 'angular-ui-router'
+asset 'angular-ui-bootstrap'
+
+# vim: ft=ruby

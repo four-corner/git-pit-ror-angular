@@ -1,0 +1,21 @@
+%p
+  %strong Customer:
+  = @project.customer
+%p
+  %strong Product:
+  = @project.product
+%p
+  %strong Platform:
+  = @project.platform
+%p
+  %strong Repo Name:
+  = @project.repo_name
+%p
+  %strong Github Repo URL:
+  = @project.git_repo_url
+%p
+  %strong Created By:
+  = @project.user.full_name
+= link_to 'Edit', edit_project_path(@project)
+|
+= link_to 'Back', projects_path

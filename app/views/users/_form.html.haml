@@ -1,0 +1,33 @@
+= form_for(@user, url: create_user_path) do |f|
+  - if @user.errors.any?
+    = ar_errors_custom_view(@user)
+  .field
+    = f.label :first_name
+    %br/
+    = f.text_field :first_name, :class => 'form-control'
+  .field
+    = f.label :last_name
+    %br/
+    = f.text_field :last_name, :class => 'form-control'
+  - if current_user.admin?
+    .field
+      = f.label :role_id
+      %br/
+      = f.select(:role_id, role_names, {}, { :class => 'form-control' })
+  .field
+    = f.label :email
+    %br/
+    = f.email_field :email, autofocus: true, :class => 'form-control'
+  .field
+    = f.label :password
+    - if @minimum_password_length
+      %em
+        (#{@minimum_password_length} characters minimum)
+    %br/
+    = f.password_field :password, autocomplete: "off", :class => 'form-control'
+  .field
+    = f.label :password_confirmation
+    %br/
+    = f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control'
+  .actions
+    = f.submit "Create User", :class => "btn btn-default"

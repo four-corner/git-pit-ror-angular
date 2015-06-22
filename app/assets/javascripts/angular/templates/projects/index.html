@@ -1,0 +1,39 @@
+<h2>Listing Projects</h2>
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Product</th>
+      <th>Platform</th>
+      <th>Created By</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-hide="projects.list.length">
+      <td>No projects found, Please create one.</td>
+    </tr>
+    <tr ng-repeat="project in projects.list" ng-show="projects.list.length">
+      <td>
+        {{ project.customer }}
+      </td>
+      <td>
+        {{ project.product }}
+      </td>
+      <td>
+        {{ project.platform }}
+      </td>
+      <td>
+        {{ project.user.first_name }} {{ project.user.last_name }}
+      </td>
+      <td>
+        <a class="btn btn-success btn-sm active" role="button" href="#/projects/{{ project.id }}">Show</a>
+        <a class="btn btn-warning btn-sm active" role="button" href="#/projects/{{ project.id }}/edit">Edit</a>
+        <a class="btn btn-danger btn-sm active" role="button" rel="nofollow" href="" ng-click="deleteProject(project.id)">Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<a href="#/create_new_project">New Project</a>

@@ -1,0 +1,9 @@
+<h2>Editing Role</h2>
+<div ng-include src="'assets/angular/templates/partials/_errors.html'" include-replace></div>
+<form class="tab-pane active form-horizontal" id="edit_role" name="roleForm" accept-charset="UTF-8" method="post" novalidate ng-submit="update_role()">
+  <div ng-include src="'assets/angular/templates/roles/_form.html'" include-replace></div>
+</form>
+<a href="#/roles/{{ role.id }}">Show</a> | 
+
+<a href="#/roles">Back</a>
+
