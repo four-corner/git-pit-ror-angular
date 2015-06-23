@@ -2,19 +2,19 @@ development:
   github_oauth_token: 670fbb9ab6c5be712cc96213186cac881b40f7b3
   github_login: four-corner
   github_email: a2.solutions.44@gmail.com
-  github_password: chittumunger02
+  github_password: 1234
   pivotaltracker_token: c26e7b48a0596780bdfb731a0fa8b252
 
 test:
   github_oauth_token: 670fbb9ab6c5be712cc96213186cac881b40f7b3
   github_login: four-corner
   github_email: a2.solutions.44@gmail.com
-  github_password: chittumunger02
+  github_password: 1234
   pivotaltracker_token: c26e7b48a0596780bdfb731a0fa8b252
 
 production:
   github_oauth_token: 670fbb9ab6c5be712cc96213186cac881b40f7b3
   github_login: four-corner
   github_email: a2.solutions.44@gmail.com
-  github_password: chittumunger02
+  github_password: 1234
   pivotaltracker_token: c26e7b48a0596780bdfb731a0fa8b252
