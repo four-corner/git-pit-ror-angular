@@ -1,0 +1,17 @@
+<div ng-controller="PasswordNewCtr as password">
+  <h2>Forgot your password?</h2>
+
+  <div ng-include src="'templates/partials/_errors.html'" include-replace=""></div>
+
+  <form ng-submit="password.getNew()" novalidate name="passwordForm" accept-charset="UTF-8" method="post">
+
+    <div class='form-group'>
+      <label for="user_email">Email <span class="required">* </span> </label>
+      <input autofocus="autofocus" class="form-control" type="email" value="" name="email" id="user_email" placeholder="Enter email" ng-model="password.credentials.email" />
+    </div>
+
+    <input type="submit" name="commit" class="btn btn-default" value="Send me reset password instructions" />
+
+  </form>
+</div>
+<a href="#/sign_in">Log in</a>

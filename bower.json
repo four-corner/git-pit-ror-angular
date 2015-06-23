@@ -20,7 +20,6 @@
     "angular": "~1.4.1",
     "angular-route": "~1.4.1",
     "angular-ui-router": "~0.2.15",
-    "angular-resource": "~1.4.1",
-    "angular-ui-bootstrap": "~0.13.0"
+    "angular-resource": "~1.4.1"
   }
 }

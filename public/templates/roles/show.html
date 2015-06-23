@@ -1,0 +1,13 @@
+<div ng-include src="'templates/partials/_flash_notice.html'" include-replace=""></div>
+
+<p>
+  <strong>Name:</strong>
+  {{ role.name }}
+</p>
+<p>
+  <strong>Description:</strong>
+  {{ role.description }}
+</p>
+<a href="#roles/{{ role.id }}/edit">Edit</a>
+|
+<a href="#/roles">Back</a>

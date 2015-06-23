@@ -39,6 +39,13 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
+
+  #assets configs
+  config.assets.compile = false
+  config.assets.precompile += [ Proc.new {|path| File.basename(path) =~ /^[^_].*\.\w+$/} ]
+  config.assets.js_compressor = Uglifier.new(output: {ascii_only: true})
+
+  #Mail configs
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {

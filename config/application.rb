@@ -23,10 +23,23 @@ module GitManager
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    config.angular_templates.module_name    = 'templates'
-    config.angular_templates.inside_paths   = [Rails.root.join('app', 'assets', 'angular')]
-    config.angular_templates.ignore_prefix  = %w(templates/)
-    config.angular_templates.markups        = %w(erb haml)
-    config.angular_templates.htmlcompressor = false
+    #config.angular_templates.module_name    = 'templates'
+    #config.angular_templates.inside_paths   = [Rails.root.join('app', 'assets', 'angular')]
+    #config.angular_templates.ignore_prefix  = %w(templates/)
+    #config.angular_templates.markups        = %w(erb haml)
+    #config.angular_templates.htmlcompressor = false
+
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
+    config.assets.precompile.shift
+
+    # Explicitly register the extensions we are interested in compiling
+    config.assets.precompile.push(Proc.new do |path|
+      File.extname(path).in? [
+                                 '.html', '.erb', '.haml',                 # Templates
+                                 '.png',  '.gif', '.jpg', '.jpeg', '.svg', # Images
+                                 '.eot',  '.otf', '.svc', '.woff', '.ttf', # Fonts
+                             ]
+    end)
+
   end
 end

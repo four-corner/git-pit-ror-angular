@@ -85,7 +85,7 @@ source "https://rails-assets.org" do
   gem 'rails-assets-angular-resource'
   gem 'rails-assets-angular-devise'
   gem 'rails-assets-angular-ui-router'
-  gem 'rails-assets-angular-ui-bootstrap'
+  #gem 'rails-assets-angular-ui-bootstrap'
 end
 
 # Specify your gem's dependencies in tracker_api.gemspec

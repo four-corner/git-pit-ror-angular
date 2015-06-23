@@ -1,0 +1,36 @@
+<div ng-include src="'templates/partials/_flash_notice.html'" include-replace=""></div>
+<h2>Listing Users</h2>
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Role</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-hide="users.list.length">
+      <td>No users found, Please create one.</td>
+    </tr>
+    <tr ng-repeat="user in users.list" ng-show="users.list.length">
+      <td>
+        {{ user.first_name }}
+      </td>
+      <td>
+        {{ user.last_name }}
+      </td>
+      <td>
+        {{ user.role.name }}
+      </td>
+      <td>
+        <a class="btn btn-success btn-sm active" role="button" href="#/users/{{ user.id }}">Show</a>
+        <a class="btn btn-warning btn-sm active" role="button" href="#/users/{{ users.current_user.id }}/edit">Edit</a>
+        <a class="btn btn-danger btn-sm active" role="button" rel="nofollow" href="" ng-click="deleteUser(user.id)">Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<a href="#/create_new_user">New User</a>
